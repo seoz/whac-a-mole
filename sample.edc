@@ -1,0 +1,392 @@
+collections {
+
+   group {
+      name: "catch_a_mole";
+
+      images {
+         image: "mole.png" COMP;
+      }
+
+      parts {
+         part {
+            name: "bg";
+            mouse_events: 0;
+            type: RECT;
+            description { state: "default" 0.0;
+               rel1 { relative: 0.0 0.0;}
+               rel2 { relative: 1.0 1.0;}
+               color: 255 255 255 255;
+            }
+         }
+         part {
+            name: "title_image";
+            type: IMAGE;
+            description { state: "default" 0.0;
+               rel1 { relative: 0.03 0.0;}
+               rel2 { relative: 0.2 0.2;}
+               image.normal: "mole.png";
+               aspect: 1 1;
+            }
+         }
+         part {
+            name: "title";
+            type: TEXT;
+            description { state: "default" 0.0;
+               rel1 { relative: 0.3 0.05;}
+               rel2 { relative: 0.7 0.15;}
+               color: 0 0 0 255;
+               text {
+                  font: "Sans, Edje-Vera";
+                  size: 30;
+                  text: "Mole Game";
+               }
+            }
+         }
+         part {
+            name: "board";
+            mouse_events: 0;
+            type: RECT;
+            description { state: "default" 0.0;
+               min: 200 200;
+               rel1 { relative: 0.0 1.0; offset: 10 10; to_y: "title_image";}
+               rel2 { relative: 1.0 0.0; offset: -11 -11; to_y: "status_bar";}
+               color: 0 0 0 255;
+            }
+         }
+         part {
+            name: "status_bar";
+            mouse_events: 0;
+            type: RECT;
+            description { state: "default" 0.0;
+               fixed: 1 1;
+               min: 0 40;
+               rel1 { relative: 0.0 1.0; offset: 0 -40; }
+               rel2 { relative: 1.0 1.0; }
+               color: 200 200 200 255;
+            }
+         }
+
+         part {
+            name: "start_button";
+            type: RECT;
+            description { state: "default" 0.0;
+               fixed: 1 1;
+               rel1 { relative: 0.1 0.1; to: "status_bar";}
+               rel2 { relative: 0.4 0.9; to: "status_bar";}
+               color: 0 155 155 255;
+            }
+         }
+         part {
+            name: "start.text";
+            repeat_events: 1;
+            type: TEXT;
+            description { state: "default" 0.0;
+               fixed: 1 1;
+               rel1 { relative: 0.1 0.1; to : "start_button";}
+               rel2 { relative: 0.9 0.9; to : "start_button";}
+               color: 0 255 255 255;
+               text {
+                  font: "Sans, Edje-Vera";
+                  size: 30;
+                  text: "Start";
+               }
+            }
+         }
+         part {
+            name: "score";
+            mouse_events: 0;
+            type: RECT;
+            description { state: "default" 0.0;
+               fixed: 1 1;
+               rel1 { relative: 0.6 0.1; to: "status_bar";}
+               rel2 { relative: 0.9 0.9; to: "status_bar";}
+               color: 155 155 0 255;
+            }
+         }
+
+         part {
+            name: "score.text";
+            mouse_events: 0;
+            type: TEXT;
+            description { state: "default" 0.0;
+               fixed: 1 1;
+               rel1 { relative: 0.1 0.1; to : "score";}
+               rel2 { relative: 0.9 0.9; to : "score";}
+               color: 200 200 0 255;
+               text {
+                  font: "Sans, Edje-Vera";
+                  size: 30;
+                  text: "0";
+               }
+            }
+         }
+         part {
+            name: "home1";
+            mouse_events: 0;
+            type: RECT;
+            description { state: "default" 0.0;
+               rel1 { relative: 0.0 0.0; offset: 4 4; to: "board";}
+               rel2 { relative: 0.33 0.33; offset: -3 -3; to: "board";}
+               color: 255 255 255 255;
+            }
+         }
+         part {
+            name: "home2";
+            mouse_events: 0;
+            type: RECT;
+            description { state: "default" 0.0;
+               rel1 { relative: 0.33 0.0; offset: 2 4; to: "board";}
+               rel2 { relative: 0.66 0.33; offset: -3 -3; to: "board";}
+               color: 255 255 255 255;
+            }
+         }
+         part {
+            name: "home3";
+            mouse_events: 0;
+            type: RECT;
+            description { state: "default" 0.0;
+               rel1 { relative: 0.66 0.0; offset: 2 4; to: "board";}
+               rel2 { relative: 1.0 0.33; offset: -4 -3; to: "board";}
+               color: 255 255 255 255;
+            }
+         }
+         part {
+            name: "home4";
+            mouse_events: 0;
+            type: RECT;
+            description { state: "default" 0.0;
+               rel1 { relative: 0.0 0.33; offset: 4 2; to: "board";}
+               rel2 { relative: 0.33 0.66; offset: -3 -3; to: "board";}
+               color: 255 255 255 255;
+            }
+         }
+         part {
+            name: "home5";
+            mouse_events: 0;
+            type: RECT;
+            description { state: "default" 0.0;
+               rel1 { relative: 0.33 0.33; offset: 2 2; to: "board";}
+               rel2 { relative: 0.66 0.66; offset: -3 -3; to: "board";}
+               color: 255 255 255 255;
+            }
+         }
+         part {
+            name: "home6";
+            mouse_events: 0;
+            type: RECT;
+            description { state: "default" 0.0;
+               rel1 { relative: 0.66 0.33; offset: 2 2; to: "board";}
+               rel2 { relative: 1.0 0.66; offset: -4 -3; to: "board";}
+               color: 255 255 255 255;
+            }
+         }
+         part {
+            name: "home7";
+            mouse_events: 0;
+            type: RECT;
+            description { state: "default" 0.0;
+               rel1 { relative: 0.0 0.66; offset: 4 2; to: "board";}
+               rel2 { relative: 0.33 1.0; offset: -3 -4; to: "board";}
+               color: 255 255 255 255;
+            }
+         }
+         part {
+            name: "home8";
+            mouse_events: 0;
+            type: RECT;
+            description { state: "default" 0.0;
+               rel1 { relative: 0.33 0.66; offset: 2 2; to: "board";}
+               rel2 { relative: 0.66 1.0; offset: -3 -4; to: "board";}
+               color: 255 255 255 255;
+            }
+         }
+         part {
+            name: "home9";
+            mouse_events: 0;
+            type: RECT;
+            description { state: "default" 0.0;
+               rel1 { relative: 0.66 0.66; offset: 2 2; to: "board";}
+               rel2 { relative: 1.0 1.0; offset: -4 -4; to: "board";}
+               color: 255 255 255 255;
+            }
+         }
+         part {
+            name: "swallow1";
+            type: SWALLOW;
+            description { state: "default" 0.0;
+               rel1 { relative: 0.1 0.1; to: "home1";}
+               rel2 { relative: 0.9 0.9; to: "home1";}
+            }
+         }
+         part {
+            name: "swallow2";
+            type: SWALLOW;
+            description { state: "default" 0.0;
+               rel1 { relative: 0.1 0.1; to: "home2";}
+               rel2 { relative: 0.9 0.9; to: "home2";}
+            }
+         }
+         part {
+            name: "swallow3";
+            type: SWALLOW;
+            description { state: "default" 0.0;
+               rel1 { relative: 0.1 0.1; to: "home3";}
+               rel2 { relative: 0.9 0.9; to: "home3";}
+            }
+         }
+         part {
+            name: "swallow4";
+            type: SWALLOW;
+            description { state: "default" 0.0;
+               rel1 { relative: 0.1 0.1; to: "home4";}
+               rel2 { relative: 0.9 0.9; to: "home4";}
+            }
+         }
+         part {
+            name: "swallow5";
+            type: SWALLOW;
+            description { state: "default" 0.0;
+               rel1 { relative: 0.1 0.1; to: "home5";}
+               rel2 { relative: 0.9 0.9; to: "home5";}
+            }
+         }
+         part {
+            name: "swallow6";
+            type: SWALLOW;
+            description { state: "default" 0.0;
+               rel1 { relative: 0.1 0.1; to: "home6";}
+               rel2 { relative: 0.9 0.9; to: "home6";}
+            }
+         }
+         part {
+            name: "swallow7";
+            type: SWALLOW;
+            description { state: "default" 0.0;
+               rel1 { relative: 0.1 0.1; to: "home7";}
+               rel2 { relative: 0.9 0.9; to: "home7";}
+            }
+         }
+         part {
+            name: "swallow8";
+            type: SWALLOW;
+            description { state: "default" 0.0;
+               rel1 { relative: 0.1 0.1; to: "home8";}
+               rel2 { relative: 0.9 0.9; to: "home8";}
+            }
+         }
+         part {
+            name: "swallow9";
+            type: SWALLOW;
+            description { state: "default" 0.0;
+               rel1 { relative: 0.1 0.1; to: "home9";}
+               rel2 { relative: 0.9 0.9; to: "home9";}
+            }
+         }
+      }
+
+      programs {
+         program {
+            name: "start";
+            signal: "mouse,clicked,1";
+            source: "start_button";
+            action: SIGNAL_EMIT "start" "";
+         }
+      }
+   }
+
+   group {
+      name: "mole";
+
+      images {
+         image: "mole.png" COMP;
+         image: "bang.png" COMP;
+      }
+
+      parts {
+         part {
+            name: "clipper";
+            type: RECT;
+            description { state: "default" 0.0;
+            }
+         }
+         part {
+            name: "mole_image";
+            type: IMAGE;
+            clip_to: "clipper";
+            description { state: "default" 0.0;
+               rel1 { relative: 0.0 0.0;}
+               rel2 { relative: 1.0 1.0;}
+               image.normal: "mole.png";
+               aspect: 1 1;
+            }
+            description { state: "hidden" 0.0;
+               inherit: "default" 0.0;
+               rel1 { relative: 0.0 1.0;}
+               rel2 { relative: 1.0 2.0;}
+            }
+         }
+         part {
+            name: "bang_image";
+            mouse_events: 0;
+            type: IMAGE;
+            description { state: "default" 0.0;
+               rel1 { relative: 0.2 0.0;}
+               rel2 { relative: 1.0 0.8;}
+               image.normal: "bang.png";
+               aspect: 1 1;
+            }
+            description { state: "hidden" 0.0;
+               inherit: "default" 0.0;
+               rel1 { relative: 0.6 0.4;}
+               rel2 { relative: 0.6 0.4;}
+            }
+         }
+      }
+
+      program {
+         name: "init";
+         signal: "load";
+         source: "";
+         action: STATE_SET "hidden" 0.0;
+         target: "mole_image";
+         target: "bang_image";
+      }
+      program {
+         name: "animation.show";
+         signal: "elm,state,show";
+         source: "elm";
+         action: STATE_SET "default" 0.0;
+         target: "mole_image";
+         transition: DECELERATE 0.3;
+         after: "animation.hide";
+      }
+      program {
+         name: "animation.hide";
+         action: STATE_SET "hidden" 0.0;
+         target: "mole_image";
+         transition: ACCELERATE 0.3;
+      }
+      program {
+         name: "bang";
+         signal: "mouse,clicked,1";
+         source: "mole_image";
+         action: SIGNAL_EMIT "clicked" "";
+         after: "animation.show.bang";
+      }
+      program {
+         name: "animation.show.bang";
+         action: STATE_SET "default" 0.0;
+         target: "bang_image";
+         transition: DECELERATE 0.3;
+         after: "animation.hide.bang";
+      }
+      program {
+         name: "animation.hide.bang";
+         action: STATE_SET "hidden" 0.0;
+         target: "bang_image";
+         transition: ACCELERATE 0.3;
+      }
+  
+   }
+}
+
