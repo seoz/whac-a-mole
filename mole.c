@@ -83,7 +83,7 @@ int main(int argc, char **argv)
 
     edje = elm_layout_add(win);
     ad->edje = edje;
-    elm_layout_file_set(edje, "sample.edj", "catch_a_mole");
+    elm_layout_file_set(edje, "mole.edj", "catch_a_mole");
     elm_layout_signal_callback_add(edje, "start", "", _start_cb, ad);
     evas_object_size_hint_weight_set(edje, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
     elm_win_resize_object_add(win, edje);

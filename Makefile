@@ -1,3 +1,3 @@
 all:
-	edje_cc sample.edc
-	gcc sample.c -o sample `pkg-config --cflags --libs elementary`
+	edje_cc mole.edc
+	gcc mole.c -o mole `pkg-config --cflags --libs elementary`
