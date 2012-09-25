@@ -1,15 +1,11 @@
 collections {
-
-   group {
-      name: "catch_a_mole";
-
+   group { name: "catch_a_mole";
       images {
          image: "mole.png" COMP;
       }
 
       parts {
-         part {
-            name: "bg";
+         part { name: "bg";
             mouse_events: 0;
             type: RECT;
             description { state: "default" 0.0;
@@ -18,8 +14,7 @@ collections {
                color: 255 255 255 255;
             }
          }
-         part {
-            name: "title_image";
+         part { name: "title_image";
             type: IMAGE;
             description { state: "default" 0.0;
                rel1 { relative: 0.03 0.0;}
@@ -28,8 +23,7 @@ collections {
                aspect: 1 1;
             }
          }
-         part {
-            name: "title";
+         part { name: "title";
             type: TEXT;
             description { state: "default" 0.0;
                rel1 { relative: 0.3 0.05;}
@@ -42,8 +36,7 @@ collections {
                }
             }
          }
-         part {
-            name: "board";
+         part { name: "board";
             mouse_events: 0;
             type: RECT;
             description { state: "default" 0.0;
@@ -53,8 +46,7 @@ collections {
                color: 0 0 0 255;
             }
          }
-         part {
-            name: "status_bar";
+         part { name: "status_bar";
             mouse_events: 0;
             type: RECT;
             description { state: "default" 0.0;
@@ -65,9 +57,7 @@ collections {
                color: 200 200 200 255;
             }
          }
-
-         part {
-            name: "start_button";
+         part { name: "start_button";
             type: RECT;
             description { state: "default" 0.0;
                fixed: 1 1;
@@ -76,8 +66,7 @@ collections {
                color: 0 155 155 255;
             }
          }
-         part {
-            name: "start.text";
+         part { name: "start.text";
             repeat_events: 1;
             type: TEXT;
             description { state: "default" 0.0;
@@ -92,8 +81,7 @@ collections {
                }
             }
          }
-         part {
-            name: "score";
+         part { name: "score";
             mouse_events: 0;
             type: RECT;
             description { state: "default" 0.0;
@@ -103,9 +91,7 @@ collections {
                color: 155 155 0 255;
             }
          }
-
-         part {
-            name: "score.text";
+         part { name: "score.text";
             mouse_events: 0;
             type: TEXT;
             description { state: "default" 0.0;
@@ -120,8 +106,7 @@ collections {
                }
             }
          }
-         part {
-            name: "home1";
+         part { name: "home1";
             mouse_events: 0;
             type: RECT;
             description { state: "default" 0.0;
@@ -130,8 +115,7 @@ collections {
                color: 255 255 255 255;
             }
          }
-         part {
-            name: "home2";
+         part { name: "home2";
             mouse_events: 0;
             type: RECT;
             description { state: "default" 0.0;
@@ -140,8 +124,7 @@ collections {
                color: 255 255 255 255;
             }
          }
-         part {
-            name: "home3";
+         part { name: "home3";
             mouse_events: 0;
             type: RECT;
             description { state: "default" 0.0;
@@ -150,8 +133,7 @@ collections {
                color: 255 255 255 255;
             }
          }
-         part {
-            name: "home4";
+         part { name: "home4";
             mouse_events: 0;
             type: RECT;
             description { state: "default" 0.0;
@@ -160,8 +142,7 @@ collections {
                color: 255 255 255 255;
             }
          }
-         part {
-            name: "home5";
+         part { name: "home5";
             mouse_events: 0;
             type: RECT;
             description { state: "default" 0.0;
@@ -170,8 +151,7 @@ collections {
                color: 255 255 255 255;
             }
          }
-         part {
-            name: "home6";
+         part { name: "home6";
             mouse_events: 0;
             type: RECT;
             description { state: "default" 0.0;
@@ -180,8 +160,7 @@ collections {
                color: 255 255 255 255;
             }
          }
-         part {
-            name: "home7";
+         part { name: "home7";
             mouse_events: 0;
             type: RECT;
             description { state: "default" 0.0;
@@ -190,8 +169,7 @@ collections {
                color: 255 255 255 255;
             }
          }
-         part {
-            name: "home8";
+         part { name: "home8";
             mouse_events: 0;
             type: RECT;
             description { state: "default" 0.0;
@@ -200,8 +178,7 @@ collections {
                color: 255 255 255 255;
             }
          }
-         part {
-            name: "home9";
+         part { name: "home9";
             mouse_events: 0;
             type: RECT;
             description { state: "default" 0.0;
@@ -210,72 +187,63 @@ collections {
                color: 255 255 255 255;
             }
          }
-         part {
-            name: "swallow1";
+         part { name: "swallow1";
             type: SWALLOW;
             description { state: "default" 0.0;
                rel1 { relative: 0.1 0.1; to: "home1";}
                rel2 { relative: 0.9 0.9; to: "home1";}
             }
          }
-         part {
-            name: "swallow2";
+         part { name: "swallow2";
             type: SWALLOW;
             description { state: "default" 0.0;
                rel1 { relative: 0.1 0.1; to: "home2";}
                rel2 { relative: 0.9 0.9; to: "home2";}
             }
          }
-         part {
-            name: "swallow3";
+         part { name: "swallow3";
             type: SWALLOW;
             description { state: "default" 0.0;
                rel1 { relative: 0.1 0.1; to: "home3";}
                rel2 { relative: 0.9 0.9; to: "home3";}
             }
          }
-         part {
-            name: "swallow4";
+         part { name: "swallow4";
             type: SWALLOW;
             description { state: "default" 0.0;
                rel1 { relative: 0.1 0.1; to: "home4";}
                rel2 { relative: 0.9 0.9; to: "home4";}
             }
          }
-         part {
-            name: "swallow5";
+         part { name: "swallow5";
             type: SWALLOW;
             description { state: "default" 0.0;
                rel1 { relative: 0.1 0.1; to: "home5";}
                rel2 { relative: 0.9 0.9; to: "home5";}
             }
          }
-         part {
-            name: "swallow6";
+         part { name: "swallow6";
             type: SWALLOW;
             description { state: "default" 0.0;
                rel1 { relative: 0.1 0.1; to: "home6";}
                rel2 { relative: 0.9 0.9; to: "home6";}
             }
          }
-         part {
-            name: "swallow7";
+         part { name: "swallow7";
             type: SWALLOW;
             description { state: "default" 0.0;
                rel1 { relative: 0.1 0.1; to: "home7";}
                rel2 { relative: 0.9 0.9; to: "home7";}
             }
          }
-         part {
-            name: "swallow8";
+         part { name: "swallow8";
             type: SWALLOW;
             description { state: "default" 0.0;
                rel1 { relative: 0.1 0.1; to: "home8";}
                rel2 { relative: 0.9 0.9; to: "home8";}
             }
          }
-         part {
-            name: "swallow9";
+         part { name: "swallow9";
             type: SWALLOW;
             description { state: "default" 0.0;
                rel1 { relative: 0.1 0.1; to: "home9";}
@@ -283,10 +251,8 @@ collections {
             }
          }
       }
-
       programs {
-         program {
-            name: "start";
+         program { name: "start";
             signal: "mouse,clicked,1";
             source: "start_button";
             action: SIGNAL_EMIT "start" "";
@@ -294,23 +260,19 @@ collections {
       }
    }
 
-   group {
-      name: "mole";
-
+   group { name: "mole";
       images {
          image: "mole.png" COMP;
          image: "bang.png" COMP;
       }
 
       parts {
-         part {
-            name: "clipper";
+         part { name: "clipper";
             type: RECT;
             description { state: "default" 0.0;
             }
          }
-         part {
-            name: "mole_image";
+         part { name: "mole_image";
             type: IMAGE;
             clip_to: "clipper";
             description { state: "default" 0.0;
@@ -325,8 +287,7 @@ collections {
                rel2 { relative: 1.0 2.0;}
             }
          }
-         part {
-            name: "bang_image";
+         part { name: "bang_image";
             mouse_events: 0;
             type: IMAGE;
             description { state: "default" 0.0;
@@ -342,17 +303,14 @@ collections {
             }
          }
       }
-
-      program {
-         name: "init";
+      program { name: "init";
          signal: "load";
          source: "";
          action: STATE_SET "hidden" 0.0;
          target: "mole_image";
          target: "bang_image";
       }
-      program {
-         name: "animation.show";
+      program { name: "animation.show";
          signal: "elm,state,show";
          source: "elm";
          action: STATE_SET "default" 0.0;
@@ -360,33 +318,27 @@ collections {
          transition: DECELERATE 0.3;
          after: "animation.hide";
       }
-      program {
-         name: "animation.hide";
+      program { name: "animation.hide";
          action: STATE_SET "hidden" 0.0;
          target: "mole_image";
          transition: ACCELERATE 0.3;
       }
-      program {
-         name: "bang";
+      program { name: "bang";
          signal: "mouse,clicked,1";
          source: "mole_image";
          action: SIGNAL_EMIT "clicked" "";
          after: "animation.show.bang";
       }
-      program {
-         name: "animation.show.bang";
+      program { name: "animation.show.bang";
          action: STATE_SET "default" 0.0;
          target: "bang_image";
          transition: DECELERATE 0.3;
          after: "animation.hide.bang";
       }
-      program {
-         name: "animation.hide.bang";
+      program { name: "animation.hide.bang";
          action: STATE_SET "hidden" 0.0;
          target: "bang_image";
          transition: ACCELERATE 0.3;
       }
-  
    }
 }
-
